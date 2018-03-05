@@ -25,6 +25,10 @@ class Crank extends Component {
       frameId: undefined,
     });
 
+    this.state = {
+      degreesRotated: 0,
+    };
+
     this.start = this.start.bind(this);
     this.tick = this.tick.bind(this);
     this.stop = this.stop.bind(this);
@@ -50,8 +54,11 @@ class Crank extends Component {
         outputPerRotation,
         onOutput,
       } = this.props;
+      const rotations = delta * (rotationsPerSecond / 1000);
+      this.setState({
+        degreesRotated: (this.state.degreesRotated + rotations * 360) % 360,
+      });
       if (onOutput) {
-        const rotations = delta * (rotationsPerSecond / 1000);
         onOutput(rotations * outputPerRotation);
       }
     }
@@ -65,7 +72,7 @@ class Crank extends Component {
   render() {
     return (
       <div onMouseDown={this.start} onMouseUp={this.stop} onMouseLeave={this.stop}>
-        crank
+        crank. degrees rotated: {this.state.degreesRotated}
       </div>
     )
   }
