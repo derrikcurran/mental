@@ -8,8 +8,8 @@ export default class Game extends Component {
       <div>
         <Counter />
         <Crank
-          revolutionsPerSecond={1}
-          outputPerRevolution={1}
+          rotationsPerSecond={1}
+          outputPerRotation={1}
         />
       </div>
     );

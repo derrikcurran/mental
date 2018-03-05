@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { increase } from '../actions';
 
 const propTypes = {
-  revolutionsPerSecond: PropTypes.number,
-  outputPerRevolution: PropTypes.number,
+  rotationsPerSecond: PropTypes.number,
+  outputPerRotation: PropTypes.number,
   onOutput: PropTypes.func,
 };
 
 const defaultProps = {
-  revolutionsPerSecond: 1,
-  outputPerRevolution: 1,
+  rotationsPerSecond: 1,
+  outputPerRotation: 1,
 };
 
 class Crank extends Component {
@@ -46,13 +46,13 @@ class Crank extends Component {
   update(delta) {
     if (this.isRunning) {
       const {
-        revolutionsPerSecond,
-        outputPerRevolution,
+        rotationsPerSecond,
+        outputPerRotation,
         onOutput,
       } = this.props;
       if (onOutput) {
-        const revolutions = delta * (revolutionsPerSecond / 1000);
-        onOutput(revolutions * outputPerRevolution);
+        const rotations = delta * (rotationsPerSecond / 1000);
+        onOutput(rotations * outputPerRotation);
       }
     }
   }
