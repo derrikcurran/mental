@@ -1,12 +1,14 @@
 import {
-  INCREMENT,
-  DECREMENT,
+  INCREASE,
+  DECREASE,
 } from './actionTypes';
 
-export const increment = () => ({
-  type: INCREMENT,
+export const increase = (value = 1) => ({
+  type: INCREASE,
+  value,
 });
 
-export const decrement = () => ({
-  type: DECREMENT,
+export const decrease = (value = 1) => ({
+  type: DECREASE,
+  value,
 });

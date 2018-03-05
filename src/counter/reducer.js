@@ -1,6 +1,6 @@
 import {
-  INCREMENT,
-  DECREMENT,
+  INCREASE,
+  DECREASE,
 } from './actionTypes';
 
 const initialState = Object.freeze({
@@ -9,15 +9,15 @@ const initialState = Object.freeze({
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case INCREASE:
       return {
         ...state,
-        count: state.count + 1,
+        count: state.count + action.value,
       };
-    case DECREMENT:
+    case DECREASE:
       return {
         ...state,
-        count: state.count - 1,
+        count: state.count - action.value,
       };
     default:
       return state;
