@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
-import { Counter, Incrementer } from './counter/components';
+import { Counter, Crank } from './counter/components';
 
 export default class Game extends Component {
   render() {
     return (
       <div>
         <Counter />
-        <Incrementer />
+        <Crank
+          revolutionsPerSecond={1}
+          outputPerRevolution={1}
+        />
       </div>
     );
   }

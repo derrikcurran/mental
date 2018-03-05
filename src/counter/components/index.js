@@ -1,2 +1,2 @@
 export { default as Counter } from './Counter';
-export { default as Incrementer } from './Incrementer';
+export { default as Crank } from './Crank';
