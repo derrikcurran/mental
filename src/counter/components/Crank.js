@@ -21,7 +21,7 @@ class Crank extends Component {
 
     Object.assign(this, {
       isRunning: false,
-      startTime: undefined,
+      lastTickTime: undefined,
       frameId: undefined,
     });
 
@@ -36,14 +36,15 @@ class Crank extends Component {
 
   start() {
     if (!this.isRunning) {
-      this.startTime = window.performance.now();
+      this.lastTickTime = window.performance.now();
       this.isRunning = true;
       this.frameId = window.requestAnimationFrame(this.tick);
     }
   }
 
-  tick(timestamp) {
-    this.update(timestamp - this.startTime);
+  tick(time) {
+    this.update(time - this.lastTickTime);
+    this.lastTickTime = time;
     this.frameId = window.requestAnimationFrame(this.tick);
   }
 
