@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
-import * as counter from './counter';
+import {
+  moneyCounter,
+  widgetCounter,
+} from './modules';
 
 export default combineReducers({
-  [counter.constants.MODULE_NAME]: counter.reducer,
+  [moneyCounter.name]: moneyCounter.reducer,
+  [widgetCounter.name]: widgetCounter.reducer,
 });

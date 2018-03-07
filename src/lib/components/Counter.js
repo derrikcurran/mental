@@ -1,9 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-import { getCount } from '../selectors';
 
 const propTypes = {
   count: PropTypes.number,
@@ -28,8 +24,4 @@ const Counter = props => {
 Counter.propTypes = propTypes;
 Counter.defaultProps = defaultProps;
 
-export default connect(
-  createStructuredSelector({
-    count: getCount,
-  })
-)(Counter);
+export default Counter;

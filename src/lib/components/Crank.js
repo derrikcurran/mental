@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import { increase } from '../actions';
 
 const propTypes = {
   rotationsPerSecond: PropTypes.number,
@@ -82,8 +79,4 @@ class Crank extends Component {
 Crank.propTypes = propTypes;
 Crank.defaultProps = defaultProps;
 
-export default connect(null, dispatch => ({
-  onOutput: output => {
-    dispatch(increase(output))
-  },
-}))(Crank);
+export default Crank;
