@@ -1,3 +1,4 @@
+import { PACKAGE_NAME } from '../../constants';
 import makeModule from '../../util/makeModule';
 
 import actions from './actions';
@@ -6,7 +7,7 @@ import reducer from './reducer';
 import selectors from './selectors';
 
 export default makeModule({
-  packageName: 'mental',
+  packageName: PACKAGE_NAME,
   moduleName: 'counter',
   actions,
   actionTypes,
